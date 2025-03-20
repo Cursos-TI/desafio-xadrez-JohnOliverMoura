@@ -1,32 +1,40 @@
 #include <stdio.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+       //Declarando a variavel.
+       int R = 1, T = 1, B = 1; 
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+       printf("\nRainha se movimenta\n");
+   
+       //Usando a estrutura de repetição while para a movimentação da Rainha 
+       while (R <= 8)
+       {
+           printf(" Esquerda\n");
+           R++;
+       }
+       
+   
+       printf("\nBispo se movimenta\n");
+   
+       //Usando a estrutura de repetição do- while para a movimentação do Dispo 
+       do
+       {
+           printf(" Cima -  Direita\n");
+           B++;
+       } while (B <=5);
+   
+   
+       printf("\nTorre se movimenta\n");
+   
+       //Usando a estrutura de repetição for para movimentação da Torre
+   
+       for (T; T <= 5; T++)
+       {
+           printf(" Direita\n");
+       }
 
     return 0;
 }
