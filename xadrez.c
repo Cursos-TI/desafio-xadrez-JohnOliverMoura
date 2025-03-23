@@ -5,7 +5,7 @@
 
 int main() {
        //Declarando a variavel.
-       int R = 1, T = 1, B = 1; 
+       int R = 1, T = 1, B = 1, C = 1; 
 
        printf("\nRainha se movimenta\n");
    
@@ -35,6 +35,24 @@ int main() {
        {
            printf(" Direita\n");
        }
+
+   //Utilizando estrutura de repetição aninhada (while e for) para a movimentação do Cavalo
+
+   printf("\n-Cavalo se movimenta \n");
+
+   int movimento = 1; // declaração da variavel de movimento do cavalo para garantir o movimento em "L"
+
+   while (movimento --) //O "--" garante que a condição só será verdadeira no primeiro teste. 
+   {
+       for (C; C < 3; C++)
+       {
+           printf("Baixo \n");
+       }
+       printf("Esquerda \n");
+   }
+
+
+
 
     return 0;
 }
