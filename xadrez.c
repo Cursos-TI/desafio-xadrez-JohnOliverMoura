@@ -1,56 +1,100 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-
-
-int main() {
-    //Declarando a variavel.
-    int R = 1, T = 1, B = 1, C = 1; 
-
-    printf("\nRainha se movimenta\n");
-   
-    //Usando a estrutura de repetição while para a movimentação da Rainha 
-    while (R <= 8)
-    {
-        printf(" Esquerda\n");
-        R++;
+//Declarando dentro do void o comando de repetição/ loop da movimentação da Rainha
+void MovimentoRainha(int casas){
+    if (casas > 0) {
+        printf("Esquerda\n");
+        MovimentoRainha(casas - 1);
     }
-       
-   
-    printf("\nBispo se movimenta\n");
-   
-    //Usando a estrutura de repetição do- while para a movimentação do Dispo 
-    do
-    {
-        printf(" Cima -  Direita\n");
-        B++;
-    } while (B <=5);
-   
-   
-    printf("\nTorre se movimenta\n");
-   
-    //Usando a estrutura de repetição for para movimentação da Torre
-   
-    for (T; T <= 5; T++)
-    {
-        printf(" Direita\n");
+}
+
+//Declarndo dentro do void o comando de repetição/ loop da movimentação da torre 
+void MovimentoTorre(int Mov){
+    if(Mov > 0){
+        printf("Direita\n");
+        MovimentoTorre(Mov - 1);
     }
+}
 
-    //Utilizando estrutura de repetição aninhada (while e for) para a movimentação do Cavalo
+//Declarei dentro desse void a movimentação do Bispo usando loops aninhados
+void MovimentoBispo(){
+    int b = 0, i = 0;
 
-    printf("\nCavalo se movimenta \n");
-
-    int movimento = 1; // declaração da variavel de movimento do cavalo para garantir o movimento em "L"
-
-    while (movimento --) //O "--" garante que a condição só será verdadeira no primeiro teste. 
-    {
-       for (C; C < 3; C++)
-       {
-           printf(" Baixo \n");
-       }
-       printf(" Esquerda \n");
+    while (b <= 4)
+    {   
+        b++;
+        printf("vertical - "); 
+    
+        for (i; i <= b; i++)
+        {
+            printf("horizontal  \n");
+           break;
+        } 
+        
     }
+}
 
+int main(){
+
+    int opcao;// Declarando variável para usar dentro do switch.
+
+    printf("\nEscolha a peça que deseja movimentar: \n");
+
+    printf("1 - Rainha\n");
+    printf("2 - Bispo\n");
+    printf("3 - Torre\n");
+    printf("4 - Cavalo\n");
+
+    scanf("%i", &opcao);
+
+
+    switch (opcao)
+    {
+    case 1:
+
+        printf("\nRainha se movimenta:\n"); // Chamando/invocando o comando MovimentoRainha criado no void, resultando no loop de repetição da ação da peça na tela.
+
+        MovimentoRainha(8);
+
+        break;
+    
+    case 2:  
+
+        printf("\nBispo se movimenta:\n"); //Chamando/invocando o comando MovimentoBispo criado no void, resultando no loop de repetição da ação da peça na tela.
+
+        MovimentoBispo();
+
+        break;
+    case 3:  
+
+        printf("\nTorre se movimenta:\n"); //Chamando/invocando o comando MovimentoTorre criado no void, resultando no loop de repetição da ação da peça na tela.
+
+        MovimentoTorre(5);
+
+        break;
+    case 4:    
+
+        //A movimentação do cavalo foi feita através de loops aninhados e avançados. Usuando condições multiplas.
+        printf("\nCavalo se movimenta:\n");
+
+        int MovCavalo = 2, i = 0;//Declarando as variáveis 'MovCavalo' para a função de imprimir 'Direita' e 'i' para a função de 'Cima'.
+
+        do //Usando o loop aninhado (Do- while e for).
+        {
+            for (i, MovCavalo; i <= 2 && MovCavalo > 0; i++, MovCavalo--)
+            {
+                printf("Cima\n");
+            }
+        
+            printf("Direita\n");
+            MovCavalo--;
+        } while (MovCavalo >= 1);
+    
+        break;
+    default:
+        printf("Opção inválida!");
+        break;
+    }
 
 
     return 0;
